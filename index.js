@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 
 const dotenv = require("dotenv");
@@ -11,7 +12,7 @@ const dbURL = 'mongodb+srv://ayush-sri:ayushsri@cluster0.mh0vd.mongodb.net/myFir
 const port = process.env.PORT || 8081;
 
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 app.use("/user", require("./routes/user"));
 
 mongoose.connect(dbURL).then(() => {
