@@ -8,7 +8,7 @@ dotenv.config();
 
 const dbURL = 'mongodb+srv://ayush-sri:ayushsri@cluster0.mh0vd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
-const port = 8081;
+const port = process.env.PORT || 8081;
 
 app.use(express.json());
 // app.use(cors());
